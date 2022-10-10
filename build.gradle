@@ -24,10 +24,11 @@ jacocoTestReport {
         html.enabled false
     }
 }
+tasks.named('wrapper') {
+    distributionType = Wrapper.DistributionType.ALL
+}
 
 check.dependsOn jacocoTestReport
-
-
 
 tasks.test {
     finalizedBy(tasks.jacocoTestReport)
